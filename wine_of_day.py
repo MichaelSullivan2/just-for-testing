@@ -1,5 +1,6 @@
 
 import csv
+import pandas
 import random
 import tweepy
 import datetime
@@ -21,7 +22,43 @@ auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 # Create API object
 api = tweepy.API(auth)
 
+path = "m1.PNG"
+path2 = "m2.PNG"
+path3 = "m3.PNG"
+path4 = "m4.PNG"
 
+fpath = "f1.PNG"
+fpath2 = "f2.PNG"
+fpath3 = "f3.PNG"
+fpath4 = "f4.PNG"
+fpath5 = "f5.PNG"
+
+
+
+random_list = list()
+random_list2 = list()
+
+random_list.append(path)
+random_list.append(path2)
+random_list.append(path3)
+random_list.append(path4)
+
+random_list2.append(fpath)
+random_list2.append(fpath2)
+random_list2.append(fpath3)
+random_list2.append(fpath4)
+random_list2.append(fpath5)
+
+newRand = random.choice(random_list)
+newRand2 = random.choice(random_list2)
+
+
+media_list = list()
+media_list2 = list()
+response = api.media_upload(newRand)
+response2 = api.media_upload(newRand2)
+media_list.append(response.media_id_string)
+media_list2.append(response2.media_id_string)
 
 
 #api.update_status(data)
@@ -43,6 +80,7 @@ def my_job():
             print("oh")
             api.update_status(status=chem, media_ids=media_list2)
         print(chem)
+
 
 schedule.every(1).minutes.do(my_job)
 
