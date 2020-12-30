@@ -21,21 +21,7 @@ auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 # Create API object
 api = tweepy.API(auth)
 
-path = r'C:\Users\User\Desktop\Image'
-path2 = r'C:\Users\User\Desktop\Image2'
-a=random.choice(os.listdir(path))
-b=random.choice(os.listdir(path2))
 
-folder = r'C:\Users\User\Desktop\Image'
-folder2 = r'C:\Users\User\Desktop\Image2'
-file = folder+'\\'+ a
-file2 = folder2+'\\'+ b
-media_list = list()
-media_list2 = list()
-response = api.media_upload(file)
-response2 = api.media_upload(file2)
-media_list.append(response.media_id_string)
-media_list2.append(response2.media_id_string)
 
 
 #api.update_status(data)
