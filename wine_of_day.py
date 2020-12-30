@@ -80,15 +80,15 @@ def my_job():
             media_list.pop()
         else:
             print("oh")
-            newRand = random.choice(random_list)
+            newRand2 = random.choice(random_list2)
 
-            response = api.media_upload(newRand)
+            response2 = api.media_upload(newRand2)
 
-            media_list.append(response.media_id_string)
-            api.update_status(status=chem, media_ids=media_list)
-            media_list.pop()
+            media_list2.append(response2.media_id_string)
+            api.update_status(status=chem, media_ids=media_list2)
+            media_list2.pop()
         print(chem)
-
+my_job()
 schedule.every().day.at("10:30").do(my_job)
 
 while True:
