@@ -88,7 +88,7 @@ def my_job():
             api.update_status(status=chem, media_ids=media_list2)
             media_list2.pop()
         print(chem)
-my_job()
+
 schedule.every().day.at("10:30").do(my_job)
 
 while True:
