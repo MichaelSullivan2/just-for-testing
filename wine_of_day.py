@@ -21,8 +21,8 @@ auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 # Create API object
 api = tweepy.API(auth)
 
-path = "C:\\Users\\User\\Desktop\\Image"
-path2 = "C:\\Users\\User\\Desktop\\Image2"
+path = r'C:\Users\User\Desktop\Image'
+path2 = r'C:\Users\User\Desktop\Image2'
 a=random.choice(os.listdir(path))
 b=random.choice(os.listdir(path2))
 
